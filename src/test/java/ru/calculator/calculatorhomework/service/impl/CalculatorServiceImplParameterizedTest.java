@@ -1,8 +1,6 @@
 package ru.calculator.calculatorhomework.service.impl;
 
-import net.bytebuddy.asm.Advice;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -49,13 +47,24 @@ public class CalculatorServiceImplParameterizedTest {
         Assertions.assertEquals(expectedMyltiply, actualMyltiply);
     }
 
+    private static Stream<Arguments> argumentCalculatorDivide() {
+        return Stream.of(
+                Arguments.of(5, 5),
+                Arguments.of(50, -10),
+                Arguments.of(-100, 10),
+                Arguments.of(21, 3),
+                Arguments.of(500, 50)
+        );
+    }
+
     @ParameterizedTest
-    @MethodSource("argumentCalculator")
+    @MethodSource("argumentCalculatorDivide")
     public void calculatorDivide(int num1, int num2) {
         int expectedDivide = num1 / num2;
         Double actualDivide = calculatorService.divide(num1, num2);
 
         Assertions.assertEquals(expectedDivide, actualDivide);
+
     }
 
 
