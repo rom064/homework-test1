@@ -16,32 +16,35 @@ public class CalculatorServiceImplTest {
 
         Assertions.assertEquals(expectedSum,actualSum);
     }
+
     @Test
     public void calculatorSubtract() {
         int num1 = 10;
         int num2 = 20;
         int expectedSubtract = num1 - num2;
-        Integer actualSubtract =  calculatorService.subtract(num1, num2);
+        Integer actualSubtract = calculatorService.subtract(num1, num2);
 
-        Assertions.assertEquals(expectedSubtract,actualSubtract);
+        Assertions.assertEquals(expectedSubtract, actualSubtract);
     }
+
     @Test
     public void calculatorMyltiply() {
         int num1 = 10;
         int num2 = 20;
         int expectedMyltiply = num1 * num2;
-        Integer actualMyltiply =  calculatorService.myltiply(num1, num2);
+        Integer actualMyltiply = calculatorService.myltiply(num1, num2);
 
-        Assertions.assertEquals(expectedMyltiply,actualMyltiply);
+        Assertions.assertEquals(expectedMyltiply, actualMyltiply);
     }
+
     @Test
     public void calculatorDivide() {
         int num1 = 20;
         int num2 = 10;
         int expectedDivide = num1 / num2;
-        Double actualDivide =  calculatorService.divide(num1, num2);
+        Double actualDivide = calculatorService.divide(num1, num2);
 
-        Assertions.assertEquals(expectedDivide,actualDivide);
+        Assertions.assertEquals(expectedDivide, actualDivide);
     }
 
     @Test

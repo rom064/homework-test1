@@ -22,49 +22,41 @@ public class CalculatorServiceImplParameterizedTest {
                 Arguments.of(5, 0)
         );
     }
+
     @ParameterizedTest
     @MethodSource("argumentCalculator")
     public void calculatorSum(int num1, int num2) {
-        Integer actualSum =  calculatorService.add(num1, num2);
+        Integer actualSum = calculatorService.add(num1, num2);
         Integer expectedSum = num1 + num2;
-        Assertions.assertEquals(expectedSum,actualSum);
+        Assertions.assertEquals(expectedSum, actualSum);
     }
+
     @ParameterizedTest
     @MethodSource("argumentCalculator")
     public void calculatorSubtract(int num1, int num2) {
         int expectedSubtract = num1 - num2;
-        Integer actualSubtract =  calculatorService.subtract(num1, num2);
+        Integer actualSubtract = calculatorService.subtract(num1, num2);
 
-        Assertions.assertEquals(expectedSubtract,actualSubtract);
+        Assertions.assertEquals(expectedSubtract, actualSubtract);
     }
+
     @ParameterizedTest
     @MethodSource("argumentCalculator")
     public void calculatorMyltiply(int num1, int num2) {
         int expectedMyltiply = num1 * num2;
-        Integer actualMyltiply =  calculatorService.myltiply(num1, num2);
+        Integer actualMyltiply = calculatorService.myltiply(num1, num2);
 
-        Assertions.assertEquals(expectedMyltiply,actualMyltiply);
+        Assertions.assertEquals(expectedMyltiply, actualMyltiply);
     }
+
     @ParameterizedTest
     @MethodSource("argumentCalculator")
     public void calculatorDivide(int num1, int num2) {
         int expectedDivide = num1 / num2;
-        Double actualDivide =  calculatorService.divide(num1, num2);
+        Double actualDivide = calculatorService.divide(num1, num2);
 
-        Assertions.assertEquals(expectedDivide,actualDivide);
+        Assertions.assertEquals(expectedDivide, actualDivide);
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

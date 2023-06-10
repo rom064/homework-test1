@@ -16,6 +16,7 @@ public class CalculatorController {
     public CalculatorController(CalculatorService calculatorService) {
         this.calculatorService = calculatorService;
     }
+
     @GetMapping
     public String greeting() {
         return calculatorService.greeting();
@@ -25,14 +26,17 @@ public class CalculatorController {
     public String addition(@RequestParam Integer num1, @RequestParam Integer num2) {
         return num1 + "+" + num2 + "=" + calculatorService.add(num1, num2);
     }
+
     @GetMapping("/minus")
     public String subtraction(@RequestParam Integer num1, @RequestParam Integer num2) {
         return num1 + "-" + num2 + "=" + calculatorService.subtract(num1, num2);
     }
+
     @GetMapping("/multiply")
     public String multiplication(@RequestParam Integer num1, @RequestParam Integer num2) {
         return num1 + "*" + num2 + "=" + calculatorService.myltiply(num1, num2);
     }
+
     @GetMapping("/divide")
     public String division(@RequestParam Integer num1, @RequestParam Integer num2) {
         return num1 + "+" + num2 + "=" + calculatorService.divide(num1, num2);
